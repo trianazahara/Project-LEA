@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/additional.css" />
+    <link rel="shortcut icon" href="/images/icon.png">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-poppins bg-amber-50">
+    <div
+      class="sticky top-0 inset-x-0 z-20 bg-amber-50 border-y px-4 sm:px-6 md:px-8 lg:hidden"
+    >
+      <div class="flex items-center py-4">
+        <button
+          type="button"
+          class="text-pink-300 hover:text-pink-300"
+          data-hs-overlay="#application-sidebar-brand"
+          aria-controls="application-sidebar-brand"
+          aria-label="Toggle navigation"
+        >
+          <span class="sr-only">Toggle Navigation</span>
+          <svg
+            class="size-5"
+            width="16"
+            height="16"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+        <!-- End Navigation Toggle -->
+
+        <!-- Breadcrumb -->
+        <ol class="ms-3 flex items-center whitespace-nowrap">
+          <li class="flex items-center text-sm text-gray-800">
+            Application Layout
+            <svg
+              class="flex-shrink-0 mx-3 overflow-visible size-2.5 text-gray-400"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </li>
+          <li class="text-sm font-semibold text-gray-800 truncate">
+            Dashboard
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div
+      id="application-sidebar-brand"
+      class="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform hidden fixed top-0 start-0 bottom-0 z-[60] w-64 bg-amber-50 pt-7 pb-10 overflow-y-auto lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 drop-shadow-lg"
+    >
+      <div class="px-6">
+        <a
+          class="flex-none text-xl font-semibold text-pink-900"
+          href="#"
+          aria-label="Brand"
+          ><img src="/images/logo.png" alt=""
+        /></a>
+      </div>
+
+      <nav
+        class="hs-accordion-group p-6 w-full flex flex-col flex-wrap"
+        data-hs-accordion-always-open
+      >
+        <ul class="space-y-1.5">
+          <li>
+            <a
+            class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-pink-900 hover:text-pink-900 rounded-lg hover:bg-gray-200 <% if(title === 'Dashboard') { %> bg-gray-200 text-black hover:bg-gray-200 <% } else { %> text-black hover:bg-gray-200 <% } %>"              href="/admin/dashboard"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-home"
+              >
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Dashboard
+            </a>
+          </li>
+
+          <li class="hs-accordion" id="users-accordion">
+            <button type="button" class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-pink-900 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300 dark:hs-accordion-active:text-white">
+              <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Barang
+          
+              <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+          
+              <svg class="hs-accordion-active:hidden ms-auto block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          
+            <div id="users-accordion-child" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
+              <ul class="hs-accordion-group ps-3 pt-2" data-hs-accordion-always-open>
+                <li class="hs-accordion" id="users-accordion-sub-1">
+                  <a href="/admin/stokbarang" class="w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-blue-600 hover:text-blue-800 text-sm text-black-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
+                    Stok Barang
+          
+                    <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+          
+                    <svg class="hs-accordion-active:hidden ms-auto block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </a>
+          
+                  <div id="users-accordion-sub-1-child" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
+                    <ul class="pt-2 ps-2">
+                      <li>
+                        <a href="/admin/stokbarang"></a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+          
+                <li class="hs-accordion" id="users-accordion-sub-2">
+                  <a href="/admin/barangmasuk" class="w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-blue-600 hover:text-blue-800 text-sm text-black-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
+                    Barang Masuk
+          
+                    <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+          
+                    <svg class="hs-accordion-active:hidden ms-auto block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </a>
+          
+                  <div id="users-accordion-sub-2-child" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden ps-2">
+                    <ul class="pt-2 ps-2">
+                    </ul>
+                  </div>
+                </li>
+                
+                <li class="hs-accordion" id="users-accordion-sub-3">
+                  <a href="/admin/barangkeluar" class="w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-blue-600 hover:text-blue-800 text-sm text-black-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
+                    Barang Keluar
+          
+                    <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+          
+                    <svg class="hs-accordion-active:hidden ms-auto block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </a>
+          
+                  <div id="users-accordion-sub-3-child" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden ps-2">
+                    <ul class="pt-2 ps-2">
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          
+          <li>
+            <a
+              class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-pink-900 hover:text-pink-900 rounded-lg hover:bg-gray-200 <% if(title === 'History') { %> bg-gray-200 text-black hover:bg-gray-200 <% } else { %> text-black hover:bg-gray-200 <% } %>"
+              href="/admin/history"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-history"
+              >
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+                <path d="M12 7v5l4 2" />
+              </svg>
+              Supplier</a
+            >
+          </li>
+          <li>
+            <a
+              class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-black hover:text-black rounded-lg hover:bg-gray-200 <% if(title === 'Feedback') { %> bg-gray-200 text-black hover:bg-gray-200 <% } else { %> text-black hover:bg-gray-200 <% } %>"
+              href="/admin/feeback"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+              Feedback</a
+            >
+          </li>
+
+          <li>
+            <form action="/logout" method="post">
+              <button
+                type="submit"
+                class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-pink-900 hover:text-pink-900 rounded-lg hover:bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-log-out"
+                >
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                  <polyline points="16 17 21 12 16 7" />
+                  <line x1="21" x2="9" y1="12" y2="12" />
+                </svg>
+                logout
+              </button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
